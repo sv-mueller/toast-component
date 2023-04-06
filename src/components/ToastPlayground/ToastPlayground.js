@@ -14,6 +14,10 @@ function ToastPlayground() {
 	const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0]);
 	const messageRef = React.useRef();
 
+	React.useEffect(() => {
+		messageRef.current.focus();
+	}, []);
+
 	function handleSubmit(event) {
 		event.preventDefault();
 		addToast(message, variant);
