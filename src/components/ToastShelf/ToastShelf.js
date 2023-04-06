@@ -21,7 +21,12 @@ function ToastShelf() {
 	}, [dismissAll]);
 
 	return (
-		<ol className={styles.wrapper}>
+		<ol
+			className={styles.wrapper}
+			role="region"
+			aria-live="polite"
+			aria-label="Notification"
+		>
 			{toasts.map(({ message, variant, id }) => (
 				<li className={styles.toastWrapper} key={id}>
 					<Toast variant={variant} dismissToast={() => dismissToast(id)}>
